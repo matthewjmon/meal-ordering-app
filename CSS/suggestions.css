@@ -1,0 +1,75 @@
+/* Suggestions Section */
+#suggestions-section {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+#suggestion-heading {
+    margin-bottom: 3rem;
+}
+
+#suggestion-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-content: center; /* Test */
+    gap: 1rem;
+    padding: 2rem;
+    align-items: start; /* Test */
+    }
+
+/* Plus-icon to add order */
+.plus-icon {
+  border: 1px solid grey;
+  background-color: rgb(249, 249, 249);
+  color: black;
+}
+
+.suggestion-card {
+    max-width: 20rem; 
+    height: 100%;
+    flex-direction: column;
+} 
+
+/* Hover effect for each card */
+.suggestion-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important;
+    color: white;
+}
+
+/* Image inside cards */
+.suggestion-card img {
+    width: auto;
+    height: 140px;
+    object-fit: cover;
+    border-radius: inherit;
+    padding: 0.5rem;
+}
+
+/* Card titles, meal names */
+.suggestion-card-title {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    justify-content: center;
+} 
+
+/* Smooth Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+} 
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out forwards;
+} 
+
+
+
+
+
+

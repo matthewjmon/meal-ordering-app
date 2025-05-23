@@ -1,0 +1,53 @@
+
+/* Chef's Favourite Section */
+.chefs-favourite-note {
+    transform: rotate(-2deg);
+    background-color: #fae8d8;
+    border-radius: 12px;
+    padding: 1rem;
+    
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.2),   /* Subtle shadow near the paper */
+        0 4px 6px rgba(0, 0, 0, 0.15),  /* Slightly deeper shadow */
+        0 10px 20px rgba(0, 0, 0, 0.1), /* Soft outer shadow */
+        -3px 3px 6px rgba(0, 0, 0, 0.07); /* Offset shadow for lifted effect */
+}
+
+/* Pin to add realism to the note */
+.pin-icon {
+    position: absolute;
+    top: -10px; /* Moves pin slightly above the note */
+    left: 50%;
+    transform: translateX(-50%) rotate(-25deg); /* Angles the pin naturally */
+    font-size: 24px; /* Keeps the pin size reasonable */
+    color: #a52a2a; /* A metallic reddish tone for realism */
+    
+    /* Depth for a 3D effect */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Order chef's favourite button styling */
+.order-chef-fav-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 0.6rem 1rem;
+    font-size: 16px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: rotate(-2deg);
+}
+
+.order-chef-fav-btn:hover {
+    background-color: #ff5252;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chef's favourite meal image styling */
+#meal-image {
+    max-height: 110px;
+    border-radius: 8px;
+}

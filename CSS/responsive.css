@@ -1,0 +1,228 @@
+
+/* Responsive Styling */
+
+/* Screens smaller than 768px */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #ingredient-form,
+    #orders-section,
+    #chefs-fav-container {
+        width: 100%;
+        max-width: 30rem;
+        margin: auto;
+    }
+
+    #suggestion-card-container {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .suggestion-card {
+        max-width: 10rem;
+        min-height: 13.75rem;
+        flex-direction: column;
+    }
+
+    #ingredient-form div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        width: 100%;
+    }
+
+    #ingredient-input {
+        flex: 1 !important;
+        min-width: 160px !important;
+    }
+
+    #get-meal-button {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .list-group-item img {
+        display: none !important;
+    }
+
+    .order-wrapper {
+       font-size: 0.6rem;
+    } 
+}
+
+/* Screens smaller that 487px */
+@media (max-width: 487px) {
+    #suggestion-card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .suggestion-card-title {
+        font-size: 0.8rem !important;
+    }
+
+    .suggestion-card .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Screens between 768px and 1457px */
+@media (min-width: 768px) and (max-width: 1457px) {
+    .row {
+        display: block !important;
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: auto !important;
+        text-align: center !important;
+    }
+
+    /* Override Bootstrap columns */
+    .col-md-3,
+    .col-md-5,
+    .col-md-2 {
+        width: 100% !important;
+        max-width: 100rem !important;
+        margin: auto !important;
+        padding: 3rem !important;
+    }
+
+    #suggestion-card-container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 2rem !important;
+        justify-content: center;
+    }
+
+    /* Fix form layout */
+    #ingredient-form,
+    #complete-order-form .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: auto !important;
+    }
+
+    /* Ensure input takes full space & button stays next to it */
+    #ingredient-input,
+    #order-number {
+        flex: 1 !important;
+        min-width: 260px !important;
+    }
+
+    #get-meal-button,
+    #complete-btn {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .order-info {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+
+    #orders-section {
+        margin-top: 0;
+    }
+}
+
+/* Screens 1457px or bigger */
+@media (min-width: 1457px) {
+    #ingredient-form div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        max-width: 600px !important;
+        margin: auto !important;
+    }
+
+    #ingredient-input {
+        flex: 1 !important;
+        min-width: 300px !important;
+    }
+
+    #get-meal-button {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    #orders-button {
+        margin-left: 35%;
+    }
+
+    .ingredient-container {
+        margin-left: 5rem;
+    }
+
+    #suggestion-card-container {
+        justify-content: center;
+    }
+}
+
+/* Screens smaller than 1456px */
+@media (max-width: 1456px) {
+    #chefs-fav-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 2rem auto !important;
+        z-index: 1000 !important;
+    }
+
+    .chefs-favourite-note {
+        width: 100%;
+    }
+
+    .order-chef-fav-btn,
+    .chefs-favourite-note {
+        transform: none !important;
+    }
+}
+
+/* Screens with exact width 1457px */
+@media (width: 1457px) {
+    #chefs-fav-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 2rem auto !important;
+        z-index: 1000 !important;
+    }
+
+    .chefs-favourite-note {
+        width: 100%;
+    }
+
+    .order-chef-fav-btn {
+        transform: none;
+    }
+
+    #orders-button {
+        margin-right: 20rem;
+    }
+}
+
+

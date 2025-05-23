@@ -1,0 +1,66 @@
+/* General styles */
+body {
+    background-color: #f4edea;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Typography & headings */
+h1, h2, h3, .suggestion-card-title {
+    font-family: 'Merriweather', serif;
+    color: #5a3e2b;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+}
+
+/* Hero section */
+.hero {
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(to right, #f4edea, #e3d5c5, #f4edea);
+    border-bottom: 2px solid #d6c3b3;
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ingredient form */
+#ingredient-form {
+    border: 1px solid #f4edea;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input section styling */
+#ingredient-input {
+    border: 1px solid #5a3e2b;
+    padding: 0.6rem;
+}
+
+/* Button styling */
+#orders-button,
+#get-meal-button,
+#complete-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #af6d48;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#get-meal-button:hover, #complete-btn:hover, .plus-icon:hover {
+    background: linear-gradient(135deg, #d88c64, #af6d48);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+}
+

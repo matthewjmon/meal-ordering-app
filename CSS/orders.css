@@ -1,0 +1,60 @@
+/* Orders section styling */
+#orders-section {
+    background-color: #e3d5c5;
+    padding: 1rem;
+    padding-top: 3.2rem;
+    border-radius: 10px;
+    margin-top: 6.3rem;
+}
+
+/* Ensures order wrapper scales properly */
+.order-wrapper {
+    flex: 1 !important;
+    min-width: 100px !important;
+    overflow: hidden !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Keeps buttons visible & properly positioned */
+.controls {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 0.1rem !important;
+    flex-shrink: 0 !important; 
+    width: auto !important;
+}
+
+/* Fix button disappearance issue */
+.complete-single-order-btn,
+.delete-btn {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border-radius: 20rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+/* Individual order styling */
+.list-group-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 7rem !important; /* Keeps items uniform */
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important; /* Prevents unwanted stretching */
+    flex-shrink: 0 !important;
+    gap: 10px !important; /* Adds spacing between elements */
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+
+
+
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef's Favourite Meals</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/responsive.css" />
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/chefs-favourite.css" />
+    <link rel="stylesheet" href="/CSS/suggestions.css" />
+    <link rel="stylesheet" href="/CSS/orders.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid px-4">
+      <!-- Hero Title Section -->
+      <div class="hero text-center mb-4">
+        <h1>Chef's Favourite Meal Finder</h1>
+      </div>
+
+      <!-- Main Layout Row (Flexible Grid for Responsive Design) -->
+      <div class="row gy-4">
+        <!-- Ingredient Search Form  -->
+        <div
+          class="col-12 col-md-5 text-center ingredient-container mb-4 mb-md-0 order-1 order-md-2"
+        >
+          <!-- Meal Search Form -->
+          <form
+            id="ingredient-form"
+            class="d-flex flex-column align-items-center gap-2 mt-3"
+          >
+            <h3>Search by Main Ingredient</h3>
+            <div class="d-flex justify-content-center gap-2">
+              <!-- User Input Field for Ingredient Search -->
+              <input
+                type="text"
+                id="ingredient-input"
+                class="form-control"
+                placeholder="e.g. Chicken Breast"
+              />
+
+              <!-- Submit Button to Fetch Meal Suggestions -->
+              <button id="get-meal-button" type="submit" class="btn px-4">
+                Get Meal
+              </button>
+            </div>
+          </form>
+
+          <!-- Meal Suggestions Section -->
+          <div id="suggestions-section" class="mt-5 mb-5 py-5">
+            <div id="suggestion-heading-container"></div>
+            <div id="suggestion-card-container" class="d-flex flex-wrap mt-3">
+              No Ingredient Entered Yet...
+            </div>
+            <div id="suggestion-error" class="text-danger mb-2"></div>
+          </div>
+        </div>
+
+        <!-- Chef's Favourite Meal Display (Positioned Responsively) -->
+        <div
+          id="chefs-fav-container"
+          class="position-absolute top-1 end-0 col-md-2 order-3 order-md-5"
+        >
+          <div
+            class="card text-center rounded-0 chefs-favourite-note me-5 mt-3"
+          >
+            <!-- Decorative Pin Icon -->
+            <i class="fas fa-thumbtack pin-icon"></i>
+
+            <div class="card-body sg-body">
+              <h5 id="chefs-favourite-heading" class="card-title mb-3">
+                Chef's Favourite
+              </h5>
+
+              <!-- Placeholder Image for Selected Meal -->
+              <img
+                src="/Images/placeholder.jpg"
+                alt="Chef's favourite meal Image"
+                class="img-fluid mb-3 rounded-2"
+                id="meal-image"
+              />
+
+              <!-- Meal Name Display -->
+              <h6
+                id="meal-name"
+                class="card-title text-center fw-semibold mt-2 mb-3"
+              >
+                No meal selected yet.
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Incomplete Orders Section -->
+        <div
+          class="col-12 col-md-3 mb-4 mb-md-0 order-4 order-md-1"
+          id="incomplete-orders-section"
+        >
+          <!-- Orders Button (Shows Order List) -->
+          <button id="orders-button" class="mt-5 position-relative">
+            Show Orders
+            <span
+              id="order-count"
+              class="badge bg-danger position-absolute translate-middle top-0 fs-6"
+              >0</span
+            >
+          </button>
+
+          <!-- Orders Management Section -->
+          <div id="orders-section" class="d-none">
+            <!-- Complete Order Form -->
+            <form
+              id="complete-order-form"
+              class="d-flex flex-column align-items-center gap-3 mb-3"
+            >
+              <label for="order-number" class="form-label mb-2 orders-label"
+                >Complete an order:</label
+              >
+              <div class="d-flex justify-content-center gap-2">
+                <input
+                  type="number"
+                  id="order-number"
+                  class="form-control form-control-sm"
+                  placeholder="Order #"
+                />
+                <button id="complete-btn" type="submit" class="btn btn-sm">
+                  Complete
+                </button>
+              </div>
+            </form>
+
+            <!-- Clear All Orders Button -->
+            <button id="clear-orders" class="btn btn-danger btn-sm mt-3 mb-2">
+              Clear All
+            </button>
+
+            <!-- List of Orders -->
+            <ul class="list-group small" id="orders-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Notification Container (Displays Alerts) -->
+      <div
+        class="toast-container position-fixed bottom-0 end-0 p-3"
+        id="toast-container"
+        style="z-index: 1080"
+      ></div>
+    </div>
+
+    <!-- Bootstrap JavaScript (Ensures Components Work) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JavaScript File (Handles Interactions & Logic) -->
+    <script src="/JS/main.js"></script>
+  </body>
+</html>
